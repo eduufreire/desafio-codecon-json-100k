@@ -83,6 +83,7 @@ func (h *Handler) Save(w http.ResponseWriter, r *http.Request) {
 			IsLeader: user.Team.Leader,
 		}
 		h.db.UserRepository.SaveUser(&userToModel)
+		h.db.TeamRepository.AddProjects(teamId, user.Team.Projects)
 
 		for _, log := range user.Logs {
 

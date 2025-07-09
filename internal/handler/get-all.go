@@ -7,7 +7,7 @@ import (
 
 func (h *Handler) GetAll(w http.ResponseWriter, r *http.Request) {
 
-	all := h.db.UserRepository.GetAllUsers()
+	all := h.db.TeamRepository.GetAllTeams()
 
 	toJson, err := json.Marshal(all)
 		if err != nil {

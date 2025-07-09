@@ -28,3 +28,7 @@ func (tr *TeamRepository) GetTeamId(name string) int {
 	}
 	return -1
 }
+
+func (tr *TeamRepository) AddProjects(id int, projects []model.Project) {
+	tr.teams[id].Projects = append(tr.teams[id].Projects, projects...)
+}
